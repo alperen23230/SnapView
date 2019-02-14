@@ -16,6 +16,8 @@
 		844AE012221099ED00BDFD03 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844AE011221099ED00BDFD03 /* AuthViewController.swift */; };
 		844AE0142210A21200BDFD03 /* SnapsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844AE0132210A21200BDFD03 /* SnapsTableViewController.swift */; };
 		8492D6792211E645004CAE09 /* ViewSnapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492D6782211E645004CAE09 /* ViewSnapViewController.swift */; };
+		8494A7452215D716002C68DA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8494A7442215D716002C68DA /* User.swift */; };
+		8494A7472215DA33002C68DA /* Snap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8494A7462215DA33002C68DA /* Snap.swift */; };
 		84CFD8D82210BC67000259E5 /* CreateSnapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CFD8D72210BC67000259E5 /* CreateSnapViewController.swift */; };
 		84CFD8DA2210C7EC000259E5 /* SelectUserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CFD8D92210C7EC000259E5 /* SelectUserTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -34,6 +36,8 @@
 		844AE011221099ED00BDFD03 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		844AE0132210A21200BDFD03 /* SnapsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapsTableViewController.swift; sourceTree = "<group>"; };
 		8492D6782211E645004CAE09 /* ViewSnapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSnapViewController.swift; sourceTree = "<group>"; };
+		8494A7442215D716002C68DA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8494A7462215DA33002C68DA /* Snap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snap.swift; sourceTree = "<group>"; };
 		84CFD8D72210BC67000259E5 /* CreateSnapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSnapViewController.swift; sourceTree = "<group>"; };
 		84CFD8D92210C7EC000259E5 /* SelectUserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectUserTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,19 +84,53 @@
 		8432D5A022106098004D5E9D /* SnapView */ = {
 			isa = PBXGroup;
 			children = (
+				8494A7402215D61E002C68DA /* Model */,
+				8494A7422215D63A002C68DA /* View */,
+				8494A7412215D629002C68DA /* Controller */,
+				8432D5A82210609A004D5E9D /* Assets.xcassets */,
+			);
+			path = SnapView;
+			sourceTree = "<group>";
+		};
+		8494A7402215D61E002C68DA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8494A7442215D716002C68DA /* User.swift */,
+				8494A7462215DA33002C68DA /* Snap.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8494A7412215D629002C68DA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
 				8432D5A122106098004D5E9D /* AppDelegate.swift */,
 				844AE011221099ED00BDFD03 /* AuthViewController.swift */,
 				844AE0132210A21200BDFD03 /* SnapsTableViewController.swift */,
 				84CFD8D72210BC67000259E5 /* CreateSnapViewController.swift */,
 				84CFD8D92210C7EC000259E5 /* SelectUserTableViewController.swift */,
 				8492D6782211E645004CAE09 /* ViewSnapViewController.swift */,
+				8494A7432215D6B8002C68DA /* Supporting Files */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8494A7422215D63A002C68DA /* View */ = {
+			isa = PBXGroup;
+			children = (
 				8432D5A522106098004D5E9D /* Main.storyboard */,
-				8432D5A82210609A004D5E9D /* Assets.xcassets */,
-				8432D5B32210647E004D5E9D /* GoogleService-Info.plist */,
 				8432D5AA2210609A004D5E9D /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8494A7432215D6B8002C68DA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8432D5B32210647E004D5E9D /* GoogleService-Info.plist */,
 				8432D5AD2210609A004D5E9D /* Info.plist */,
 			);
-			path = SnapView;
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		E80F793D428ED28AA0CC3628 /* Frameworks */ = {
@@ -238,6 +276,8 @@
 				844AE012221099ED00BDFD03 /* AuthViewController.swift in Sources */,
 				84CFD8D82210BC67000259E5 /* CreateSnapViewController.swift in Sources */,
 				8432D5A222106098004D5E9D /* AppDelegate.swift in Sources */,
+				8494A7452215D716002C68DA /* User.swift in Sources */,
+				8494A7472215DA33002C68DA /* Snap.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,7 +426,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MTMVBPSRA5;
-				INFOPLIST_FILE = SnapView/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/SnapView/Controller/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -405,7 +445,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MTMVBPSRA5;
-				INFOPLIST_FILE = SnapView/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/SnapView/Controller/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

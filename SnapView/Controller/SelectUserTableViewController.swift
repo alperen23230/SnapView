@@ -12,6 +12,7 @@ import FirebaseAuth
 
 class SelectUserTableViewController: UITableViewController {
 
+    let snap = Snap()
     var imageName = ""
     var imageURL = ""
     var message = ""
@@ -52,16 +53,15 @@ class SelectUserTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let user = users[indexPath.row]
+        
         if let fromEmail = Auth.auth().currentUser?.email{
-            let snapDictionary = ["from":fromEmail, "imageName":imageName, "imageURL":imageURL, "message":message]
+            snap.imageName = self.imageName
+            snap.imageURL = self.imageURL
+            snap.message = self.message
+            let snapDictionary = ["from":fromEmail, "imageName":snap.imageName, "imageURL":snap.imageURL, "message":snap.message]
             Database.database().reference().child("users").child(user.uid).child("snaps").childByAutoId().setValue(snapDictionary)
             navigationController?.popToRootViewController(animated: true)
         }
     }
 
-}
-
-class User {
-    var email:String = ""
-    var uid:String = ""
 }
