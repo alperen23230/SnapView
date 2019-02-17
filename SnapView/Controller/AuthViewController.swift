@@ -15,21 +15,26 @@ class AuthViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var topButton: UIButton!
-    @IBOutlet weak var bottomButton: UIButton!
+   
+    @IBOutlet private var topButton: CustomButton!
+    @IBOutlet private var bottomButton: CustomButton!
     
     var loginMode = true
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.topButton.setTitle("Sign In", for: .normal)
+        self.bottomButton.setTitle("Switch to Sign Up", for: .normal)
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "5")!)
     }
     
     
-    @IBAction func topTapped(_ sender: Any) {
-        
+  
+
+
+
+    @IBAction func topButton(_ sender: CustomButton) {
         if let email = emailTextField.text{
             if let password = passwordTextField.text{
                 if loginMode{
@@ -57,29 +62,51 @@ class AuthViewController: UIViewController {
                             
                         }
                         else{
-                            print("Error:\(error!)")
+                            if let errCode = AuthErrorCode(rawValue: error!._code){
+                                
+                                switch errCode {
+                                case .invalidEmail:
+                                    print("invalid email")
+                                    _ = SweetAlert().showAlert("This E-mail is invalid!", subTitle: "", style: AlertStyle.error)
+                                case .emailAlreadyInUse:
+                                    print("in use")
+                                     _ = SweetAlert().showAlert("This E-mail is already in", subTitle: "use!", style: AlertStyle.error)
+                                case .weakPassword:
+                                     _ = SweetAlert().showAlert("This password is too", subTitle: "weak!", style: AlertStyle.error)
+                                default:
+                                    print("Create User Error: \(String(describing: error))")
+                                }
+                                
+                            }
+//                            print("Error:\(error!)")
                         }
                     }
                 }
             }
         }
-        
-       
+
     }
     
-    
-    @IBAction func bottomTapped(_ sender: Any) {
+
+
+
+    @IBAction func bottomTapped(_ sender: CustomButton) {
+        
         if loginMode{
             loginMode = false
+            topButton.shake()
             topButton.setTitle("Sign Up", for: .normal)
             bottomButton.setTitle("Switch to Sign In", for: .normal)
         }
         else{
             loginMode=true
+            topButton.shake()
             topButton.setTitle("Sign In", for: .normal)
             bottomButton.setTitle("Switch to Sign Up", for: .normal)
         }
     }
     
-
+    
 }
+
+

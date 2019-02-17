@@ -36,43 +36,45 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aec-Sg-dWr">
-                                <rect key="frame" x="164" y="207" width="47" height="30"/>
-                                <state key="normal" title="Sign In"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aec-Sg-dWr" customClass="CustomButton" customModule="SnapView" customModuleProvider="target">
+                                <rect key="frame" x="20" y="207" width="335" height="30"/>
                                 <connections>
-                                    <action selector="topTapped:" destination="XBB-Q3-YfU" eventType="touchUpInside" id="eDb-T0-aHT"/>
+                                    <action selector="topButton:" destination="XBB-Q3-YfU" eventType="touchUpInside" id="mAU-Ik-pTz"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lpj-N6-Pwv">
-                                <rect key="frame" x="126.5" y="273" width="122" height="30"/>
-                                <state key="normal" title="Switch to Sign Up"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lpj-N6-Pwv" customClass="CustomButton" customModule="SnapView" customModuleProvider="target">
+                                <rect key="frame" x="20" y="273" width="335" height="30"/>
                                 <connections>
-                                    <action selector="bottomTapped:" destination="XBB-Q3-YfU" eventType="touchUpInside" id="1jw-Zt-H3g"/>
+                                    <action selector="bottomTapped:" destination="XBB-Q3-YfU" eventType="touchUpInside" id="jZs-8U-Ky2"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="aec-Sg-dWr" firstAttribute="centerX" secondItem="CMu-Y0-u1d" secondAttribute="centerX" id="1kt-UR-Xq5"/>
+                            <constraint firstItem="HIX-cI-lZ2" firstAttribute="trailing" secondItem="Lpj-N6-Pwv" secondAttribute="trailing" constant="20" id="4bF-1Q-5H8"/>
                             <constraint firstItem="GLV-e3-eFp" firstAttribute="top" secondItem="yoW-G9-o66" secondAttribute="bottom" constant="18" id="Eix-5p-qmY"/>
                             <constraint firstItem="HIX-cI-lZ2" firstAttribute="trailing" secondItem="yoW-G9-o66" secondAttribute="trailing" constant="30" id="I7W-Bt-lTW"/>
                             <constraint firstItem="Lpj-N6-Pwv" firstAttribute="top" secondItem="aec-Sg-dWr" secondAttribute="bottom" constant="36" id="L9X-V0-B4e"/>
+                            <constraint firstItem="Lpj-N6-Pwv" firstAttribute="leading" secondItem="HIX-cI-lZ2" secondAttribute="leading" constant="20" id="PQe-tq-55I"/>
                             <constraint firstItem="QXe-ZF-KIh" firstAttribute="top" secondItem="HIX-cI-lZ2" secondAttribute="top" constant="23" id="UUr-wX-jqQ"/>
                             <constraint firstItem="GLV-e3-eFp" firstAttribute="leading" secondItem="HIX-cI-lZ2" secondAttribute="leading" constant="30" id="Uzv-Wz-qsq"/>
                             <constraint firstItem="QXe-ZF-KIh" firstAttribute="centerX" secondItem="CMu-Y0-u1d" secondAttribute="centerX" id="Y8V-LL-EFy"/>
                             <constraint firstItem="HIX-cI-lZ2" firstAttribute="trailing" secondItem="GLV-e3-eFp" secondAttribute="trailing" constant="30" id="bAO-FZ-4BE"/>
                             <constraint firstItem="Lpj-N6-Pwv" firstAttribute="centerX" secondItem="CMu-Y0-u1d" secondAttribute="centerX" id="eSV-dz-dCV"/>
+                            <constraint firstItem="aec-Sg-dWr" firstAttribute="leading" secondItem="HIX-cI-lZ2" secondAttribute="leading" constant="20" id="gHv-8W-ND6"/>
                             <constraint firstItem="aec-Sg-dWr" firstAttribute="top" secondItem="GLV-e3-eFp" secondAttribute="bottom" constant="30" id="iq5-2g-R99"/>
                             <constraint firstItem="yoW-G9-o66" firstAttribute="top" secondItem="QXe-ZF-KIh" secondAttribute="bottom" constant="32" id="kZJ-Ug-0AX"/>
+                            <constraint firstItem="HIX-cI-lZ2" firstAttribute="trailing" secondItem="aec-Sg-dWr" secondAttribute="trailing" constant="20" id="vjH-OU-Umi"/>
                             <constraint firstItem="yoW-G9-o66" firstAttribute="leading" secondItem="HIX-cI-lZ2" secondAttribute="leading" constant="30" id="y9u-8t-zoQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HIX-cI-lZ2"/>
                     </view>
                     <connections>
-                        <outlet property="bottomButton" destination="Lpj-N6-Pwv" id="xmd-dl-f8k"/>
+                        <outlet property="bottomButton" destination="Lpj-N6-Pwv" id="Tor-lQ-8DS"/>
                         <outlet property="emailTextField" destination="yoW-G9-o66" id="kVN-yQ-N1K"/>
                         <outlet property="passwordTextField" destination="GLV-e3-eFp" id="vQj-lL-gPx"/>
-                        <outlet property="topButton" destination="aec-Sg-dWr" id="jbH-c0-jg5"/>
+                        <outlet property="topButton" destination="aec-Sg-dWr" id="bJ8-Nb-jOH"/>
                         <segue destination="sZl-lM-VMP" kind="presentation" identifier="authSuccess" id="KLA-6m-PFo"/>
                     </connections>
                 </viewController>

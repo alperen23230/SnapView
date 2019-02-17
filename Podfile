@@ -12,4 +12,5 @@ target 'SnapView' do
     pod 'Firebase/Auth', '5.0.0'
     pod 'Firebase/Storage'
     pod 'Firebase/Database', '5.0.0'
+    pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
 end

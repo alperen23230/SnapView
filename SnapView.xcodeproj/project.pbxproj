@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		50099543C95C34D4A4CF54CB /* Pods_SnapView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 062298A1BA265B75FFB28FE3 /* Pods_SnapView.framework */; };
+		8405162F2219F89C005BDBEF /* SweetAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405162E2219F89C005BDBEF /* SweetAlert.swift */; };
 		8432D5A222106098004D5E9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432D5A122106098004D5E9D /* AppDelegate.swift */; };
 		8432D5A722106098004D5E9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8432D5A522106098004D5E9D /* Main.storyboard */; };
 		8432D5A92210609A004D5E9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8432D5A82210609A004D5E9D /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 		8492D6792211E645004CAE09 /* ViewSnapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492D6782211E645004CAE09 /* ViewSnapViewController.swift */; };
 		8494A7452215D716002C68DA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8494A7442215D716002C68DA /* User.swift */; };
 		8494A7472215DA33002C68DA /* Snap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8494A7462215DA33002C68DA /* Snap.swift */; };
+		849B34CB221967DA003F5C70 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B34CA221967DA003F5C70 /* CustomButton.swift */; };
 		84CFD8D82210BC67000259E5 /* CreateSnapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CFD8D72210BC67000259E5 /* CreateSnapViewController.swift */; };
 		84CFD8DA2210C7EC000259E5 /* SelectUserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CFD8D92210C7EC000259E5 /* SelectUserTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -26,6 +28,7 @@
 		062298A1BA265B75FFB28FE3 /* Pods_SnapView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnapView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		284C38864A20C198AEC53DC9 /* Pods-SnapView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnapView.release.xcconfig"; path = "Pods/Target Support Files/Pods-SnapView/Pods-SnapView.release.xcconfig"; sourceTree = "<group>"; };
 		3D733A0B584B4D42A979FFEC /* Pods-SnapView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnapView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SnapView/Pods-SnapView.debug.xcconfig"; sourceTree = "<group>"; };
+		8405162E2219F89C005BDBEF /* SweetAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SweetAlert.swift; sourceTree = "<group>"; };
 		8432D59E22106098004D5E9D /* SnapView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnapView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8432D5A122106098004D5E9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8432D5A622106098004D5E9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -38,6 +41,7 @@
 		8492D6782211E645004CAE09 /* ViewSnapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSnapViewController.swift; sourceTree = "<group>"; };
 		8494A7442215D716002C68DA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8494A7462215DA33002C68DA /* Snap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snap.swift; sourceTree = "<group>"; };
+		849B34CA221967DA003F5C70 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		84CFD8D72210BC67000259E5 /* CreateSnapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSnapViewController.swift; sourceTree = "<group>"; };
 		84CFD8D92210C7EC000259E5 /* SelectUserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectUserTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -120,6 +124,8 @@
 			children = (
 				8432D5A522106098004D5E9D /* Main.storyboard */,
 				8432D5AA2210609A004D5E9D /* LaunchScreen.storyboard */,
+				8405162E2219F89C005BDBEF /* SweetAlert.swift */,
+				849B34CA221967DA003F5C70 /* CustomButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -242,6 +248,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SnapView/Pods-SnapView-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
@@ -252,6 +259,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
@@ -271,7 +279,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				844AE0142210A21200BDFD03 /* SnapsTableViewController.swift in Sources */,
+				8405162F2219F89C005BDBEF /* SweetAlert.swift in Sources */,
 				8492D6792211E645004CAE09 /* ViewSnapViewController.swift in Sources */,
+				849B34CB221967DA003F5C70 /* CustomButton.swift in Sources */,
 				84CFD8DA2210C7EC000259E5 /* SelectUserTableViewController.swift in Sources */,
 				844AE012221099ED00BDFD03 /* AuthViewController.swift in Sources */,
 				84CFD8D82210BC67000259E5 /* CreateSnapViewController.swift in Sources */,
