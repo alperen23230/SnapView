@@ -26,7 +26,7 @@ class AuthViewController: UIViewController {
         super.viewDidLoad()
         self.topButton.setTitle("Sign In", for: .normal)
         self.bottomButton.setTitle("Switch to Sign Up", for: .normal)
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "5")!)
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Background")!)
     }
     
     
@@ -44,6 +44,25 @@ class AuthViewController: UIViewController {
                             self.performSegue(withIdentifier: "authSuccess", sender: nil)
                         }
                         else{
+                            
+                            if let errCode = AuthErrorCode(rawValue: error!._code){
+                                
+                                switch errCode {
+                                case .wrongPassword:
+                                    print("wrong password")
+                                    _ = SweetAlert().showAlert("This password is wrong!", subTitle: "", style: AlertStyle.error)
+                                case .missingEmail:
+                                    print("This e-mail not in the system")
+                                    _ = SweetAlert().showAlert("This e-mail not in the system", subTitle: "", style: AlertStyle.error)
+                                case .userNotFound:
+                                    _ = SweetAlert().showAlert("This e-mail not in the system", subTitle: "", style: AlertStyle.error)
+                                default:
+                                    print("Create User Error: \(String(describing: error))")
+                                }
+                                
+                            }
+                            
+                            
                             print("Error:\(error!)")
                         }
                     }
