@@ -170,7 +170,7 @@
                         <rightBarButtonItems>
                             <barButtonItem systemItem="camera" id="rec-a4-6RO">
                                 <connections>
-                                    <action selector="camTapped:" destination="Y0T-gt-bGz" id="KGV-EK-C6m"/>
+                                    <action selector="camTapped:" destination="Y0T-gt-bGz" id="3V3-Wy-1Jx"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem systemItem="organize" id="6RH-Vo-4lh">

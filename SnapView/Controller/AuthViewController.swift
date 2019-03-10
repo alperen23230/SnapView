@@ -41,7 +41,15 @@ class AuthViewController: UIViewController {
                     
                     Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
                         if error == nil{
-                            self.performSegue(withIdentifier: "authSuccess", sender: nil)
+                            
+                            if Auth.auth().currentUser?.isEmailVerified ?? false{
+                                self.performSegue(withIdentifier: "authSuccess", sender: nil)
+                            }
+                            else{
+                                _ = SweetAlert().showAlert("This user account isn't verificated!", subTitle: "Please verify your E-mail!", style: AlertStyle.error)
+
+                            }
+                            
                         }
                         else{
                             
@@ -75,7 +83,24 @@ class AuthViewController: UIViewController {
                             if let uid = result?.user.uid{
                                 
                                 Database.database().reference().child("users").child(uid).child("email").setValue(email)
-                                self.performSegue(withIdentifier: "authSuccess", sender: nil)
+                                
+                                
+                                Auth.auth().currentUser?.sendEmailVerification { (error) in
+                                    print("email send!")
+                                    
+                                    if error == nil{
+                                        if let errCode = AuthErrorCode(rawValue: error!._code){
+                                            switch errCode{
+                                            case .userNotFound:
+                                                _ = SweetAlert().showAlert("User not found!", subTitle: "", style: AlertStyle.error)
+                                            default: print(error)
+                                            }
+                                        }
+                                    }
+                                    
+                                    
+                                    
+                                }
                             }
                             
                             

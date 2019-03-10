@@ -66,7 +66,7 @@ class CreateSnapViewController: UIViewController,UIImagePickerControllerDelegate
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let selectedImage = info[UIImagePickerController.InfoKey.originalImage]{
             
-            imageView.image = selectedImage as! UIImage
+            imageView.image = selectedImage as? UIImage
             dismiss(animated: true, completion: nil)
             
         }
