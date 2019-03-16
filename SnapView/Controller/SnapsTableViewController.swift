@@ -43,6 +43,12 @@ class SnapsTableViewController: UITableViewController {
     }
     
     @IBAction func logoutTapped(_ sender: Any) {
+        do{
+            try Auth.auth().signOut()
+        }
+        catch let error{
+            print(error)
+        }
         dismiss(animated: true, completion: nil)
     }
     
