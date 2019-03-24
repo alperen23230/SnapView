@@ -21,6 +21,11 @@ class SelectUserTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        performSelector(inBackground: #selector(getUsers), with: nil)
+    }
+
+    
+    @objc func getUsers(){
         Database.database().reference().child("users").observe(.childAdded) { (snapshot) in
             if let userDictionary = snapshot.value as? NSDictionary{
                 if let email = userDictionary["email"] as? String {
@@ -28,13 +33,13 @@ class SelectUserTableViewController: UITableViewController {
                     user.email=email
                     user.uid = snapshot.key
                     self.users.append(user)
-                    self.tableView.reloadData()
+                    self.tableView.performSelector(onMainThread: #selector(UITableView.reloadData), with: (nil), waitUntilDone: false)
                 }
             }
         }
-      
     }
-
+    
+    
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
